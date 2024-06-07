@@ -11,5 +11,5 @@ public class Order: Entity<int>
   public DateTime PaymentDate { get; set; }
   public string PaymentNumber { get; set; }
   public string PaymentType { get; set; }
-  public virtual ICollection<Product>Products { get; set; }
+  public virtual ICollection<Product>? Products { get; set; }
 }
