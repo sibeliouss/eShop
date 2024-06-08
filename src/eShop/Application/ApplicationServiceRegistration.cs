@@ -23,6 +23,9 @@ using Application.Services.Orders;
 using Application.Services.Shoppings;
 using Application.Services.Categories;
 using Application.Services.Products;
+using Application.Services.OrderInformations;
+
+
 
 namespace Application;
 
@@ -69,6 +72,7 @@ public static class ApplicationServiceRegistration
  services.AddScoped<ICategoryService, CategoryManager>();
  services.AddScoped<IProductService, ProductManager>();
 
+ services.AddScoped<IOrderInformationService, OrderInformationManager>();
         return services;
     }
 

@@ -18,7 +18,8 @@ public class BaseDbContext : DbContext
     public DbSet<Product> Products { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<Shopping> Shoppings { get; set; }
-    public DbSet<OrderStatus> OrderStatus { get; set; }
+    public DbSet<OrderInformation> OrderInformations { get; set; }
+  
 
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)

@@ -13,7 +13,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.Property(o => o.Id).HasColumnName("Id").IsRequired();
         builder.Property(o => o.OrderNumber).HasColumnName("OrderNumber");
         builder.Property(o => o.Quantity).HasColumnName("Quantity");
-        builder.Property(o => o.Price).HasColumnName("Price");
+       
         builder.Property(o => o.PaymentDate).HasColumnName("PaymentDate");
         builder.Property(o => o.PaymentNumber).HasColumnName("PaymentNumber");
         builder.Property(o => o.PaymentType).HasColumnName("PaymentType");
@@ -22,5 +22,15 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.Property(o => o.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(o => !o.DeletedDate.HasValue);
+        
+        builder.HasMany(o => o.Products)
+            .WithOne(p => p.Order)
+            .HasForeignKey(p => p.OrderId);
+        
+        builder.OwnsOne(o => o.Price, price =>
+        {
+            price.Property(m => m.Value).HasColumnType("money");
+            price.Property(m => m.Currency).HasMaxLength(5);
+        });
     }
 }

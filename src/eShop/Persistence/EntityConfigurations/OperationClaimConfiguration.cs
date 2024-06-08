@@ -10,6 +10,9 @@ using Application.Features.Orders.Constants;
 using Application.Features.Shoppings.Constants;
 using Application.Features.Categories.Constants;
 using Application.Features.Products.Constants;
+using Application.Features.OrderInformations.Constants;
+
+
 
 namespace Persistence.EntityConfigurations;
 
@@ -154,9 +157,22 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         ]
     );
     #endregion
+ 
     
-
-    
+ 
+ #region OrderInformations
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Admin },
+         new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Read },
+         new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Write },
+         new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Create },
+         new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Update },
+         new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
         return featureOperationClaims;
     }
 #pragma warning restore S1854 // Unused assignments should be removed
