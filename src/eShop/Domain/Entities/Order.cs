@@ -3,7 +3,7 @@ using NArchitecture.Core.Persistence.Repositories;
 
 namespace Domain.Entities;
 
-public class Order: Entity<int>
+public class Order: Entity<Guid>
 {
   public string OrderNumber { get; set; } 
   public int Quantity { get; set; }

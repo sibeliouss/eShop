@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.UsersService;
@@ -19,6 +19,10 @@ using NArchitecture.Core.Localization.Resource.Yaml.DependencyInjection;
 using NArchitecture.Core.Mailing;
 using NArchitecture.Core.Mailing.MailKit;
 using NArchitecture.Core.Security.DependencyInjection;
+using Application.Services.Orders;
+using Application.Services.Shoppings;
+using Application.Services.Categories;
+using Application.Services.Products;
 
 namespace Application;
 
@@ -58,6 +62,12 @@ public static class ApplicationServiceRegistration
         services.AddYamlResourceLocalization();
 
         services.AddSecurityServices<Guid, int>();
+        
+        services.AddScoped<IOrderService, OrderManager>();
+ 
+ services.AddScoped<IShoppingService, ShoppingManager>();
+ services.AddScoped<ICategoryService, CategoryManager>();
+ services.AddScoped<IProductService, ProductManager>();
 
         return services;
     }
