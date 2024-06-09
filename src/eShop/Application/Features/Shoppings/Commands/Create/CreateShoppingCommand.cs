@@ -15,7 +15,7 @@ namespace Application.Features.Shoppings.Commands.Create;
 
 public class CreateShoppingCommand : IRequest<CreatedShoppingResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
-    public Guid UserId { get; set; }
+    public Guid CustomerId { get; set; }
     public Guid ProductId { get; set; }
     public Money Price { get; set; }
     public int Quantity { get; set; }

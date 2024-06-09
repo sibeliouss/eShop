@@ -15,6 +15,5 @@ public class UpdateProductCommandValidator : AbstractValidator<UpdateProductComm
         RuleFor(c => c.Stock).NotEmpty();
         RuleFor(c => c.CategoryId).NotEmpty();
         RuleFor(c => c.Price).NotEmpty();
-        RuleFor(c => c.OrderId).NotEmpty();
     }
 }

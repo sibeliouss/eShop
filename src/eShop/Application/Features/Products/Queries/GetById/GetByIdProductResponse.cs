@@ -14,5 +14,4 @@ public class GetByIdProductResponse : IResponse
     public short Stock { get; set; }
     public Guid CategoryId { get; set; }
     public Money Price { get; set; }
-    public Guid OrderId { get; set; }
 }

@@ -7,7 +7,7 @@ public class UpdateShoppingCommandValidator : AbstractValidator<UpdateShoppingCo
     public UpdateShoppingCommandValidator()
     {
         RuleFor(c => c.Id).NotEmpty();
-        RuleFor(c => c.UserId).NotEmpty();
+        RuleFor(c => c.CustomerId).NotEmpty();
         RuleFor(c => c.ProductId).NotEmpty();
         RuleFor(c => c.Price).NotEmpty();
         RuleFor(c => c.Quantity).NotEmpty();

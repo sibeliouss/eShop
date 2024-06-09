@@ -21,14 +21,15 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
-
-        services.AddScoped<IOrderRepository, OrderRepository>();
+        
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<IOrderInformationRepository, OrderInformationRepository>();
 
         services.AddScoped<IShoppingRepository, ShoppingRepository>();
-        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ICustomerRepository, CustomerRepository>();
+        services.AddScoped<IOrderProductRepository, OrderProductRepository>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
-
-        services.AddScoped<IOrderInformationRepository, OrderInformationRepository>();
         return services;
     }
 }

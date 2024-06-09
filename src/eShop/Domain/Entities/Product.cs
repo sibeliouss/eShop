@@ -14,6 +14,7 @@ public class Product: Entity<Guid>
    public Guid CategoryId { get; set; }
    public virtual Category? Category { get; set; }
    public Money Price { get; set; } = new(0, "₺");
-   public Guid OrderId { get; set; }
-   public virtual Order? Order { get; set; }
+   
+   public virtual ICollection<OrderProduct>? OrderProducts { get; set; }
+ 
 }

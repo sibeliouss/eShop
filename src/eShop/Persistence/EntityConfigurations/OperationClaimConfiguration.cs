@@ -6,10 +6,14 @@ using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NArchitecture.Core.Security.Constants;
-using Application.Features.Orders.Constants;
-using Application.Features.Shoppings.Constants;
 using Application.Features.Categories.Constants;
+using Application.Features.Shoppings.Constants;
+using Application.Features.Customers.Constants;
+using Application.Features.OrderProducts.Constants;
+using Application.Features.Orders.Constants;
 using Application.Features.Products.Constants;
+
+
 using Application.Features.OrderInformations.Constants;
 
 
@@ -104,32 +108,7 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         );
         #endregion
 
-        #region Orders
-    featureOperationClaims.AddRange(
-        [
-            new() { Id = ++lastId, Name = OrdersOperationClaims.Admin },
-            new() { Id = ++lastId, Name = OrdersOperationClaims.Read },
-            new() { Id = ++lastId, Name = OrdersOperationClaims.Write },
-            new() { Id = ++lastId, Name = OrdersOperationClaims.Create },
-            new() { Id = ++lastId, Name = OrdersOperationClaims.Update },
-            new() { Id = ++lastId, Name = OrdersOperationClaims.Delete },
-        ]
-    );
-    #endregion
-    
-    #region Shoppings
-    featureOperationClaims.AddRange(
-        [
-            new() { Id = ++lastId, Name = ShoppingsOperationClaims.Admin },
-            new() { Id = ++lastId, Name = ShoppingsOperationClaims.Read },
-            new() { Id = ++lastId, Name = ShoppingsOperationClaims.Write },
-            new() { Id = ++lastId, Name = ShoppingsOperationClaims.Create },
-            new() { Id = ++lastId, Name = ShoppingsOperationClaims.Update },
-            new() { Id = ++lastId, Name = ShoppingsOperationClaims.Delete },
-        ]
-    );
-    #endregion
-    
+ 
     
     #region Categories
     featureOperationClaims.AddRange(
@@ -143,22 +122,7 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         ]
     );
     #endregion
-    
-    
-    #region Products
-    featureOperationClaims.AddRange(
-        [
-            new() { Id = ++lastId, Name = ProductsOperationClaims.Admin },
-            new() { Id = ++lastId, Name = ProductsOperationClaims.Read },
-            new() { Id = ++lastId, Name = ProductsOperationClaims.Write },
-            new() { Id = ++lastId, Name = ProductsOperationClaims.Create },
-            new() { Id = ++lastId, Name = ProductsOperationClaims.Update },
-            new() { Id = ++lastId, Name = ProductsOperationClaims.Delete },
-        ]
-    );
-    #endregion
- 
-    
+  
  
  #region OrderInformations
  featureOperationClaims.AddRange(
@@ -169,6 +133,78 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
          new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Create },
          new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Update },
          new() { Id = ++lastId, Name = OrderInformationsOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
+ 
+ #region Shoppings
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = ShoppingsOperationClaims.Admin },
+         new() { Id = ++lastId, Name = ShoppingsOperationClaims.Read },
+         new() { Id = ++lastId, Name = ShoppingsOperationClaims.Write },
+         new() { Id = ++lastId, Name = ShoppingsOperationClaims.Create },
+         new() { Id = ++lastId, Name = ShoppingsOperationClaims.Update },
+         new() { Id = ++lastId, Name = ShoppingsOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
+
+ 
+ 
+ #region Customers
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Admin },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Read },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Write },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Create },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Update },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
+ 
+ #region OrderProducts
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Admin },
+         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Read },
+         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Write },
+         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Create },
+         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Update },
+         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
+ 
+ #region Orders
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = OrdersOperationClaims.Admin },
+         new() { Id = ++lastId, Name = OrdersOperationClaims.Read },
+         new() { Id = ++lastId, Name = OrdersOperationClaims.Write },
+         new() { Id = ++lastId, Name = OrdersOperationClaims.Create },
+         new() { Id = ++lastId, Name = OrdersOperationClaims.Update },
+         new() { Id = ++lastId, Name = OrdersOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
+ 
+ #region Products
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = ProductsOperationClaims.Admin },
+         new() { Id = ++lastId, Name = ProductsOperationClaims.Read },
+         new() { Id = ++lastId, Name = ProductsOperationClaims.Write },
+         new() { Id = ++lastId, Name = ProductsOperationClaims.Create },
+         new() { Id = ++lastId, Name = ProductsOperationClaims.Update },
+         new() { Id = ++lastId, Name = ProductsOperationClaims.Delete },
      ]
  );
  #endregion

@@ -51,6 +51,66 @@ namespace Persistence.Migrations
                     b.ToTable("Categories", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.Customer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Address");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Email");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("FirstName");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LastName");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Password");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Phone");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Customers", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.EmailAuthenticator", b =>
                 {
                     b.Property<Guid>("Id")
@@ -262,181 +322,253 @@ namespace Persistence.Migrations
                         {
                             Id = 24,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Orders.Admin"
+                            Name = "Categories.Admin"
                         },
                         new
                         {
                             Id = 25,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Orders.Read"
+                            Name = "Categories.Read"
                         },
                         new
                         {
                             Id = 26,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Orders.Write"
+                            Name = "Categories.Write"
                         },
                         new
                         {
                             Id = 27,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Orders.Create"
+                            Name = "Categories.Create"
                         },
                         new
                         {
                             Id = 28,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Orders.Update"
+                            Name = "Categories.Update"
                         },
                         new
                         {
                             Id = 29,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Orders.Delete"
+                            Name = "Categories.Delete"
                         },
                         new
                         {
                             Id = 30,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Shoppings.Admin"
+                            Name = "OrderInformations.Admin"
                         },
                         new
                         {
                             Id = 31,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Shoppings.Read"
+                            Name = "OrderInformations.Read"
                         },
                         new
                         {
                             Id = 32,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Shoppings.Write"
+                            Name = "OrderInformations.Write"
                         },
                         new
                         {
                             Id = 33,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Shoppings.Create"
+                            Name = "OrderInformations.Create"
                         },
                         new
                         {
                             Id = 34,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Shoppings.Update"
+                            Name = "OrderInformations.Update"
                         },
                         new
                         {
                             Id = 35,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Shoppings.Delete"
+                            Name = "OrderInformations.Delete"
                         },
                         new
                         {
                             Id = 36,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Categories.Admin"
+                            Name = "Shoppings.Admin"
                         },
                         new
                         {
                             Id = 37,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Categories.Read"
+                            Name = "Shoppings.Read"
                         },
                         new
                         {
                             Id = 38,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Categories.Write"
+                            Name = "Shoppings.Write"
                         },
                         new
                         {
                             Id = 39,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Categories.Create"
+                            Name = "Shoppings.Create"
                         },
                         new
                         {
                             Id = 40,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Categories.Update"
+                            Name = "Shoppings.Update"
                         },
                         new
                         {
                             Id = 41,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Categories.Delete"
+                            Name = "Shoppings.Delete"
                         },
                         new
                         {
                             Id = 42,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Products.Admin"
+                            Name = "Customers.Admin"
                         },
                         new
                         {
                             Id = 43,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Products.Read"
+                            Name = "Customers.Read"
                         },
                         new
                         {
                             Id = 44,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Products.Write"
+                            Name = "Customers.Write"
                         },
                         new
                         {
                             Id = 45,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Products.Create"
+                            Name = "Customers.Create"
                         },
                         new
                         {
                             Id = 46,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Products.Update"
+                            Name = "Customers.Update"
                         },
                         new
                         {
                             Id = 47,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Products.Delete"
+                            Name = "Customers.Delete"
                         },
                         new
                         {
                             Id = 48,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrderInformations.Admin"
+                            Name = "OrderProducts.Admin"
                         },
                         new
                         {
                             Id = 49,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrderInformations.Read"
+                            Name = "OrderProducts.Read"
                         },
                         new
                         {
                             Id = 50,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrderInformations.Write"
+                            Name = "OrderProducts.Write"
                         },
                         new
                         {
                             Id = 51,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrderInformations.Create"
+                            Name = "OrderProducts.Create"
                         },
                         new
                         {
                             Id = 52,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrderInformations.Update"
+                            Name = "OrderProducts.Update"
                         },
                         new
                         {
                             Id = 53,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrderInformations.Delete"
+                            Name = "OrderProducts.Delete"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orders.Admin"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orders.Read"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orders.Write"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orders.Create"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orders.Update"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orders.Delete"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Products.Admin"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Products.Read"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Products.Write"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Products.Create"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Products.Update"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Products.Delete"
                         });
                 });
 
@@ -524,6 +656,42 @@ namespace Persistence.Migrations
                     b.ToTable("OrderInformations", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.OrderProduct", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("OrderId");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ProductId");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProducts", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.OtpAuthenticator", b =>
                 {
                     b.Property<Guid>("Id")
@@ -606,10 +774,6 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("OrderId");
-
                     b.Property<short>("Stock")
                         .HasColumnType("smallint")
                         .HasColumnName("Stock");
@@ -621,8 +785,6 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("Products", (string)null);
                 });
@@ -698,6 +860,10 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CustomerId");
+
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletedDate");
@@ -714,15 +880,11 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("UserId");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("CustomerId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Shoppings", (string)null);
                 });
@@ -772,12 +934,12 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2864b21a-dbd0-4507-90e1-bf1182c9fafa"),
+                            Id = new Guid("fc2121fd-7161-4af0-958f-04dbab78fdf6"),
                             AuthenticatorType = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "narch@kodlama.io",
-                            PasswordHash = new byte[] { 58, 122, 123, 2, 220, 210, 181, 62, 236, 225, 39, 173, 173, 251, 45, 102, 22, 119, 56, 46, 131, 167, 48, 113, 27, 207, 221, 144, 84, 222, 195, 8, 151, 68, 192, 152, 232, 25, 206, 112, 211, 221, 165, 118, 205, 200, 22, 98, 72, 158, 98, 143, 196, 140, 14, 38, 143, 17, 106, 217, 9, 165, 181, 186 },
-                            PasswordSalt = new byte[] { 231, 106, 219, 34, 203, 120, 149, 52, 72, 144, 127, 201, 45, 181, 123, 184, 123, 234, 0, 154, 106, 82, 181, 168, 102, 148, 161, 55, 122, 25, 201, 124, 107, 90, 197, 207, 34, 196, 5, 73, 215, 134, 118, 234, 67, 24, 74, 58, 111, 50, 95, 80, 9, 217, 33, 64, 223, 158, 158, 222, 149, 30, 222, 240, 220, 220, 14, 30, 50, 163, 158, 66, 16, 106, 181, 237, 61, 53, 90, 54, 185, 180, 130, 132, 174, 17, 134, 216, 242, 133, 64, 215, 147, 226, 34, 163, 209, 23, 102, 137, 1, 134, 95, 175, 12, 76, 135, 219, 165, 218, 84, 120, 107, 123, 99, 137, 216, 51, 182, 192, 39, 197, 182, 88, 45, 174, 126, 95 }
+                            PasswordHash = new byte[] { 249, 53, 210, 236, 226, 246, 183, 79, 93, 21, 130, 164, 113, 63, 235, 188, 18, 238, 141, 18, 15, 47, 252, 204, 73, 197, 46, 39, 220, 6, 56, 51, 114, 128, 68, 43, 145, 250, 201, 120, 241, 183, 198, 245, 81, 164, 168, 178, 183, 211, 111, 81, 213, 49, 222, 154, 84, 108, 131, 227, 14, 98, 225, 144 },
+                            PasswordSalt = new byte[] { 2, 65, 0, 201, 212, 242, 183, 236, 57, 248, 201, 104, 120, 248, 205, 21, 5, 163, 186, 18, 206, 213, 108, 79, 169, 134, 190, 2, 204, 89, 96, 206, 196, 5, 149, 10, 157, 70, 113, 12, 234, 138, 236, 117, 230, 85, 166, 201, 246, 232, 28, 228, 147, 4, 70, 163, 149, 113, 56, 24, 170, 2, 47, 149, 210, 232, 64, 229, 143, 235, 223, 227, 228, 126, 237, 176, 182, 161, 62, 251, 155, 60, 206, 245, 127, 175, 222, 13, 43, 129, 12, 213, 14, 75, 60, 116, 10, 218, 95, 228, 138, 166, 49, 77, 60, 214, 179, 52, 229, 7, 76, 168, 87, 14, 41, 58, 96, 110, 229, 132, 5, 123, 66, 231, 122, 240, 58, 103 }
                         });
                 });
 
@@ -819,11 +981,22 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7595e0f1-c932-4a84-8533-15d13fd29da6"),
+                            Id = new Guid("6fcbd2b8-187b-4218-87e0-7f03e42de417"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OperationClaimId = 1,
-                            UserId = new Guid("2864b21a-dbd0-4507-90e1-bf1182c9fafa")
+                            UserId = new Guid("fc2121fd-7161-4af0-958f-04dbab78fdf6")
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.Customer", b =>
+                {
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.EmailAuthenticator", b =>
@@ -864,6 +1037,25 @@ namespace Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Domain.Entities.OrderProduct", b =>
+                {
+                    b.HasOne("Domain.Entities.Order", "Order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Product", "Product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Domain.Entities.OtpAuthenticator", b =>
                 {
                     b.HasOne("Domain.Entities.User", "User")
@@ -880,12 +1072,6 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Order", "Order")
-                        .WithMany("Products")
-                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -912,8 +1098,6 @@ namespace Persistence.Migrations
 
                     b.Navigation("Category");
 
-                    b.Navigation("Order");
-
                     b.Navigation("Price")
                         .IsRequired();
                 });
@@ -931,15 +1115,15 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Shopping", b =>
                 {
-                    b.HasOne("Domain.Entities.Product", "Product")
+                    b.HasOne("Domain.Entities.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.User", "User")
+                    b.HasOne("Domain.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -964,12 +1148,12 @@ namespace Persistence.Migrations
                                 .HasForeignKey("ShoppingId");
                         });
 
+                    b.Navigation("Customer");
+
                     b.Navigation("Price")
                         .IsRequired();
 
                     b.Navigation("Product");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.UserOperationClaim", b =>
@@ -998,7 +1182,12 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Order", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Product", b =>
+                {
+                    b.Navigation("OrderProducts");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>

@@ -11,9 +11,8 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>
         builder.ToTable("Shoppings").HasKey(s => s.Id);
 
         builder.Property(s => s.Id).HasColumnName("Id").IsRequired();
-        builder.Property(s => s.UserId).HasColumnName("UserId");
+        builder.Property(s => s.CustomerId).HasColumnName("CustomerId");
         builder.Property(s => s.ProductId).HasColumnName("ProductId");
-      
         builder.Property(s => s.Quantity).HasColumnName("Quantity");
         builder.Property(s => s.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");

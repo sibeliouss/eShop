@@ -24,7 +24,6 @@ public class UpdateProductCommand : IRequest<UpdatedProductResponse>, ISecuredRe
     public short Stock { get; set; }
     public Guid CategoryId { get; set; }
     public Money Price { get; set; }
-    public Guid OrderId { get; set; }
 
     public string[] Roles => [Admin, Write, ProductsOperationClaims.Update];
 

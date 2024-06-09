@@ -19,11 +19,14 @@ using NArchitecture.Core.Localization.Resource.Yaml.DependencyInjection;
 using NArchitecture.Core.Mailing;
 using NArchitecture.Core.Mailing.MailKit;
 using NArchitecture.Core.Security.DependencyInjection;
-using Application.Services.Orders;
-using Application.Services.Shoppings;
 using Application.Services.Categories;
-using Application.Services.Products;
 using Application.Services.OrderInformations;
+using Application.Services.Shoppings;
+using Application.Services.Customers;
+using Application.Services.OrderProducts;
+using Application.Services.Orders;
+using Application.Services.Products;
+
 
 
 
@@ -66,13 +69,19 @@ public static class ApplicationServiceRegistration
 
         services.AddSecurityServices<Guid, int>();
         
-        services.AddScoped<IOrderService, OrderManager>();
+      
  
- services.AddScoped<IShoppingService, ShoppingManager>();
+
  services.AddScoped<ICategoryService, CategoryManager>();
- services.AddScoped<IProductService, ProductManager>();
+
 
  services.AddScoped<IOrderInformationService, OrderInformationManager>();
+ services.AddScoped<IShoppingService, ShoppingManager>();
+
+ services.AddScoped<ICustomerService, CustomerManager>();
+ services.AddScoped<IOrderProductService, OrderProductManager>();
+ services.AddScoped<IOrderService, OrderManager>();
+ services.AddScoped<IProductService, ProductManager>();
         return services;
     }
 
