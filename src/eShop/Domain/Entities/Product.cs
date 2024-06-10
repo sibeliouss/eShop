@@ -15,6 +15,6 @@ public class Product: Entity<Guid>
    public virtual Category? Category { get; set; }
    public Money Price { get; set; } = new(0, "₺");
    
-   public virtual ICollection<OrderProduct>? OrderProducts { get; set; }
+   public virtual ICollection<Order>? Orders { get; set; }
  
 }

@@ -23,12 +23,8 @@ using Application.Services.Categories;
 using Application.Services.OrderInformations;
 using Application.Services.Shoppings;
 using Application.Services.Customers;
-using Application.Services.OrderProducts;
 using Application.Services.Orders;
 using Application.Services.Products;
-
-
-
 
 namespace Application;
 
@@ -79,7 +75,8 @@ public static class ApplicationServiceRegistration
  services.AddScoped<IShoppingService, ShoppingManager>();
 
  services.AddScoped<ICustomerService, CustomerManager>();
- services.AddScoped<IOrderProductService, OrderProductManager>();
+
+
  services.AddScoped<IOrderService, OrderManager>();
  services.AddScoped<IProductService, ProductManager>();
         return services;

@@ -9,9 +9,10 @@ using NArchitecture.Core.Security.Constants;
 using Application.Features.Categories.Constants;
 using Application.Features.Shoppings.Constants;
 using Application.Features.Customers.Constants;
-using Application.Features.OrderProducts.Constants;
 using Application.Features.Orders.Constants;
 using Application.Features.Products.Constants;
+
+
 
 
 using Application.Features.OrderInformations.Constants;
@@ -168,19 +169,9 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
  #endregion
  
  
- #region OrderProducts
- featureOperationClaims.AddRange(
-     [
-         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Admin },
-         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Read },
-         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Write },
-         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Create },
-         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Update },
-         new() { Id = ++lastId, Name = OrderProductsOperationClaims.Delete },
-     ]
- );
- #endregion
+
  
+
  
  #region Orders
  featureOperationClaims.AddRange(

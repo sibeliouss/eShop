@@ -16,6 +16,7 @@ namespace Application.Features.Orders.Commands.Create;
 public class CreateOrderCommand : IRequest<CreatedOrderResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string OrderNumber { get; set; }
+    public Guid ProductId { get; set; }
     public int Quantity { get; set; }
     public Money Price { get; set; }
     public DateTime PaymentDate { get; set; }
