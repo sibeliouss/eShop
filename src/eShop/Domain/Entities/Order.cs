@@ -5,7 +5,7 @@ namespace Domain.Entities;
 
 public class Order: Entity<Guid>
 {
-  public string OrderNumber { get; set; }
+  public string? OrderNumber { get; set; }
   
   public Guid ProductId { get; set; }
   public virtual Product? Product { get; set; }

@@ -45,6 +45,7 @@ public class CreateOrderCommand : IRequest<CreatedOrderResponse>, ISecuredReques
 
         public async Task<CreatedOrderResponse> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
+            await _orderBusinessRules.GetNewOrderNumber();
             Order order = _mapper.Map<Order>(request);
 
             await _orderRepository.AddAsync(order);
