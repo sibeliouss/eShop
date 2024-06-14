@@ -1,8 +1,8 @@
-using NArchitecture.Core.Security.Attributes;
+
 
 namespace Application.Features.OrderInformations.Constants;
 
-[OperationClaimConstants]
+
 public static class OrderInformationsOperationClaims
 {
     private const string _section = "OrderInformations";
