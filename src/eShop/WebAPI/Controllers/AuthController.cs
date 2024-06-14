@@ -6,6 +6,7 @@ using Application.Features.Auth.Commands.Register;
 using Application.Features.Auth.Commands.RevokeToken;
 using Application.Features.Auth.Commands.VerifyEmailAuthenticator;
 using Application.Features.Auth.Commands.VerifyOtpAuthenticator;
+using Application.Features.Auth.Dtos;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -28,9 +29,17 @@ public class AuthController : BaseController
     }
 
     [HttpPost("Login")]
-    public async Task<IActionResult> Login([FromBody] UserForLoginDto userForLoginDto)
+    public async Task<IActionResult> Login([FromBody] BaseAuthDto baseAuthDto)
     {
-        LoginCommand loginCommand = new() { UserForLoginDto = userForLoginDto, IpAddress = getIpAddress() };
+        LoginCommand loginCommand = new() 
+        { 
+            UserForLoginDto = new UserForLoginDto() 
+            { 
+                Email = baseAuthDto.Email, 
+                Password = baseAuthDto.Password 
+            }, 
+            IpAddress = getIpAddress() 
+        };
         LoggedResponse result = await Mediator.Send(loginCommand);
 
         if (result.RefreshToken is not null)
@@ -47,6 +56,7 @@ public class AuthController : BaseController
         setRefreshTokenToCookie(result.RefreshToken);
         return Created(uri: "", result.AccessToken);
     }
+   
 
     [HttpGet("RefreshToken")]
     public async Task<IActionResult> RefreshToken()
