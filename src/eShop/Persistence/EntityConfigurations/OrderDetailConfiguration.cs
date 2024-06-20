@@ -14,7 +14,6 @@ public class OrderDetailConfiguration : IEntityTypeConfiguration<OrderDetail>
         builder.Property(od => od.OrderId).HasColumnName("OrderId");
         builder.Property(od => od.ProductId).HasColumnName("ProductId");
         builder.Property(od => od.Quantity).HasColumnName("Quantity");
-        builder.Property(od => od.Price).HasColumnName("Price");
         builder.Property(od => od.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(od => od.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(od => od.DeletedDate).HasColumnName("DeletedDate");
