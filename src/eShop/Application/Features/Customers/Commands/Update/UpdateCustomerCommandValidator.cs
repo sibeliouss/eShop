@@ -11,7 +11,6 @@ public class UpdateCustomerCommandValidator : AbstractValidator<UpdateCustomerCo
         RuleFor(c => c.LastName).NotEmpty();
         RuleFor(c => c.Email).NotEmpty();
         RuleFor(c => c.Password).NotEmpty();
-        RuleFor(c => c.Address).NotEmpty();
         RuleFor(c => c.Phone).NotEmpty();
         RuleFor(c => c.UserId).NotEmpty();
     }

@@ -21,6 +21,10 @@ public class BaseDbContext : DbContext
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<OrderDetail> OrderDetails { get; set; }
+    public DbSet<BillingAddress> BillingAddresses { get; set; }
+    public DbSet<Address> Addresses { get; set; }
+    public DbSet<ProductDiscount> ProductDiscounts { get; set; }
 
    
   

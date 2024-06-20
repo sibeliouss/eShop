@@ -28,9 +28,12 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IShoppingRepository, ShoppingRepository>();
         services.AddScoped<ICustomerRepository, CustomerRepository>();
 
-
-        services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
+        services.AddScoped<IBillingAddressRepository, BillingAddressRepository>();
+        services.AddScoped<IAddressRepository, AddressRepository>();
+        services.AddScoped<IProductDiscountRepository, ProductDiscountRepository>();
         return services;
     }
 }

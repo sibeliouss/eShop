@@ -8,9 +8,7 @@ public class UpdateOrderCommandValidator : AbstractValidator<UpdateOrderCommand>
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.OrderNumber).NotEmpty();
-        RuleFor(c => c.ProductId).NotEmpty();
-        RuleFor(c => c.Quantity).NotEmpty();
-        RuleFor(c => c.Price).NotEmpty();
+        RuleFor(c => c.CustomerId).NotEmpty();
         RuleFor(c => c.PaymentDate).NotEmpty();
         RuleFor(c => c.PaymentNumber).NotEmpty();
         RuleFor(c => c.PaymentType).NotEmpty();

@@ -3,7 +3,6 @@ using Application.Features.Orders.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
-using Domain.MoneyObject;
 using NArchitecture.Core.Application.Pipelines.Authorization;
 using NArchitecture.Core.Application.Pipelines.Caching;
 using NArchitecture.Core.Application.Pipelines.Logging;
@@ -15,10 +14,8 @@ namespace Application.Features.Orders.Commands.Create;
 
 public class CreateOrderCommand : IRequest<CreatedOrderResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
-    public string OrderNumber { get; set; }
-    public Guid ProductId { get; set; }
-    public int Quantity { get; set; }
-    public Money Price { get; set; }
+    public string? OrderNumber { get; set; }
+    public Guid? CustomerId { get; set; }
     public DateTime PaymentDate { get; set; }
     public string PaymentNumber { get; set; }
     public string PaymentType { get; set; }
@@ -45,7 +42,6 @@ public class CreateOrderCommand : IRequest<CreatedOrderResponse>, ISecuredReques
 
         public async Task<CreatedOrderResponse> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            await _orderBusinessRules.GetNewOrderNumber();
             Order order = _mapper.Map<Order>(request);
 
             await _orderRepository.AddAsync(order);

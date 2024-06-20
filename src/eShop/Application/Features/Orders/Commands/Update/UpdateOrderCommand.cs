@@ -3,7 +3,6 @@ using Application.Features.Orders.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
-using Domain.MoneyObject;
 using NArchitecture.Core.Application.Pipelines.Authorization;
 using NArchitecture.Core.Application.Pipelines.Caching;
 using NArchitecture.Core.Application.Pipelines.Logging;
@@ -16,10 +15,8 @@ namespace Application.Features.Orders.Commands.Update;
 public class UpdateOrderCommand : IRequest<UpdatedOrderResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public Guid Id { get; set; }
-    public string OrderNumber { get; set; }
-    public Guid ProductId { get; set; }
-    public int Quantity { get; set; }
-    public Money Price { get; set; }
+    public string? OrderNumber { get; set; }
+    public Guid? CustomerId { get; set; }
     public DateTime PaymentDate { get; set; }
     public string PaymentNumber { get; set; }
     public string PaymentType { get; set; }

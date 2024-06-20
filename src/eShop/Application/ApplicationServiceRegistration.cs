@@ -23,9 +23,13 @@ using Application.Services.Categories;
 using Application.Services.OrderInformations;
 using Application.Services.Shoppings;
 using Application.Services.Customers;
-using Application.Services.Orders;
 using Application.Services.Products;
 using NArchitecture.Core.Security.JWT;
+using Application.Services.Orders;
+using Application.Services.OrderDetails;
+using Application.Services.BillingAddresses;
+using Application.Services.Addresses;
+using Application.Services.ProductDiscounts;
 
 namespace Application;
 
@@ -80,8 +84,13 @@ public static class ApplicationServiceRegistration
  services.AddScoped<ICustomerService, CustomerManager>();
 
 
- services.AddScoped<IOrderService, OrderManager>();
+
  services.AddScoped<IProductService, ProductManager>();
+ services.AddScoped<IOrderService, OrderManager>();
+ services.AddScoped<IOrderDetailService, OrderDetailManager>();
+ services.AddScoped<IBillingAddressService, BillingAddressManager>();
+ services.AddScoped<IAddressService, AddressManager>();
+ services.AddScoped<IProductDiscountService, ProductDiscountManager>();
         return services;
     }
 
