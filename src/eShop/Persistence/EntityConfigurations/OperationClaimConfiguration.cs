@@ -9,6 +9,7 @@ using NArchitecture.Core.Security.Constants;
 using Application.Features.Categories.Constants;
 using Application.Features.Shoppings.Constants;
 using Application.Features.Customers.Constants;
+
 using Application.Features.Orders.Constants;
 using Application.Features.OrderDetails.Constants;
 using Application.Features.BillingAddresses.Constants;
@@ -155,21 +156,7 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
  );
  #endregion
  
- #region Customers
- featureOperationClaims.AddRange(
-     [
-         new() { Id = ++lastId, Name = CustomersOperationClaims.Admin },
-         new() { Id = ++lastId, Name = CustomersOperationClaims.Read },
-         new() { Id = ++lastId, Name = CustomersOperationClaims.Write },
-         new() { Id = ++lastId, Name = CustomersOperationClaims.Create },
-         new() { Id = ++lastId, Name = CustomersOperationClaims.Update },
-         new() { Id = ++lastId, Name = CustomersOperationClaims.Delete },
-     ]
- );
- #endregion
- 
- 
- 
+
  #region Products
  featureOperationClaims.AddRange(
      [
@@ -249,6 +236,20 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
          new() { Id = ++lastId, Name = ProductDiscountsOperationClaims.Create },
          new() { Id = ++lastId, Name = ProductDiscountsOperationClaims.Update },
          new() { Id = ++lastId, Name = ProductDiscountsOperationClaims.Delete },
+     ]
+ );
+ #endregion
+ 
+ 
+ #region Customers
+ featureOperationClaims.AddRange(
+     [
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Admin },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Read },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Write },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Create },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Update },
+         new() { Id = ++lastId, Name = CustomersOperationClaims.Delete },
      ]
  );
  #endregion

@@ -26,7 +26,6 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IOrderInformationRepository, OrderInformationRepository>();
 
         services.AddScoped<IShoppingRepository, ShoppingRepository>();
-        services.AddScoped<ICustomerRepository, CustomerRepository>();
 
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
@@ -34,6 +33,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IBillingAddressRepository, BillingAddressRepository>();
         services.AddScoped<IAddressRepository, AddressRepository>();
         services.AddScoped<IProductDiscountRepository, ProductDiscountRepository>();
+        services.AddScoped<ICustomerRepository, CustomerRepository>();
         return services;
     }
 }

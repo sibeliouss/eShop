@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using NArchitecture.Core.Application.Dtos;
 using NArchitecture.Core.Security.JWT;
 
 namespace Application.Services.AuthService;
@@ -15,4 +16,5 @@ public interface IAuthService
     public Task RevokeRefreshToken(RefreshToken token, string ipAddress, string? reason = null, string? replacedByToken = null);
 
     public Task<RefreshToken> RotateRefreshToken(User user, RefreshToken refreshToken, string ipAddress);
+    Task<User> Register(UserForRegisterDto request); //eklendi.
 }

@@ -23,6 +23,7 @@ using Application.Services.Categories;
 using Application.Services.OrderInformations;
 using Application.Services.Shoppings;
 using Application.Services.Customers;
+
 using Application.Services.Products;
 using NArchitecture.Core.Security.JWT;
 using Application.Services.Orders;
@@ -81,7 +82,6 @@ public static class ApplicationServiceRegistration
  services.AddScoped<IOrderInformationService, OrderInformationManager>();
  services.AddScoped<IShoppingService, ShoppingManager>();
 
- services.AddScoped<ICustomerService, CustomerManager>();
 
 
 
@@ -91,6 +91,7 @@ public static class ApplicationServiceRegistration
  services.AddScoped<IBillingAddressService, BillingAddressManager>();
  services.AddScoped<IAddressService, AddressManager>();
  services.AddScoped<IProductDiscountService, ProductDiscountManager>();
+ services.AddScoped<ICustomerService, CustomerManager>();
         return services;
     }
 
